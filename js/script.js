@@ -36,24 +36,24 @@
 
 //!----------------Operators------------------------------
 
-console.log("arr" + " - object");
-console.log(4 + "5");
+// console.log("arr" + " - object");
+// console.log(4 + "5");
 //45
 
-let incr = 10,
-    decr = 10;
+// let incr = 10,
+//     decr = 10;
 
-incr++;
-decr--;
+// incr++;
+// decr--;
 
-console.log(incr);
+// console.log(incr);
 //11
-console.log(13 % 5);
+// console.log(13 % 5);
 //3
 
-const isChecked = true,
-    isClose = false;
-console.log(isChecked || isClose);
+// const isChecked = true,
+//     isClose = false;
+// console.log(isChecked || isClose);
 //true
 
 
