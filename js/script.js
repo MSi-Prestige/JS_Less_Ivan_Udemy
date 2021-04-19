@@ -192,5 +192,110 @@ console.log(parseInt(test2)); // 12 - сделал чисто из 12.2px
 console.log(parseFloat(test2));
 
 //----------------------------------------
+//TODO: Callback Function 19 lesson
+
+function first() {
+    setTimeout(function () {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    console.log(2);
+}
+
+// first();
+// second();
+//----------------------------------------
+
+function learnJS(lang, callback) {
+    // setTimeout(function () {
+    //     console.log("SetTime"); //! Asynhron FUNCTION 
+    // }, 500);
+    console.log(`Я учу - ${lang}`);
+    callback();
+}
+
+learnJS("JavaScript", function () {  // Анонимная Функ.
+    console.log("Я прошел этот урок!");
+});
+
+//-----------------------------------------
+//TODO: Object JS 20 lesson
+
+const obj2 = new Object();
+const options = {
+    name: "test",
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: "black",
+        bg: "red",
+    }
+};
+
+console.log(options.colors);
+
+//TODO: Смотрим что в обьекте ! 
+for (let key in options) {
+    //тут смотрим есть ли обьект в обьекте ? 
+    if (typeof (options[key]) === "object") {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    }
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const cars = {
+//     axle: "rear",
+//     color: "red",
+//     name: "Audi",
+//     size: "5m",
+//     year: 2000,
+//     city: {
+//         daugavpils: 3,
+//         riga: 4,
+//         ventspils: 5,
+//         Russia: {
+//             Moskow: 10,
+//             Piter: 4,
+//         }
+//     },
+//     information: "It is a good car!",
+// };
+
+// console.log(cars);
+// console.log(Object.keys(cars).length);
+// for (let keyCar in cars) {
+
+//     if (typeof cars[keyCar] === "object") {
+//         for (let objKeyCar in cars[keyCar]) {
+//             if (typeof cars[objKeyCar] === "object") {
+//                 for (let secondObj in cars[objKeyCar]) {
+//                     console.log(`Информация о машине ${secondObj} со значением ${cars[keyCar][secondObj]}`);
+//                 }
+//             } else {
+//                 console.log(`Информация о машине ${objKeyCar} со значением ${cars[keyCar][objKeyCar]}`);
+//             }
+//         }
+//     } else {
+//         console.log(`Информация о машине ${keyCar} со значением ${cars[keyCar]}`);
+//     }
+// }
