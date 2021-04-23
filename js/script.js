@@ -155,12 +155,14 @@ logger();
 
 //!  ARROW F
 
-const calculator = (a, b) => a + b;
+const calculator = (a, b, c) => a + b + c;
+console.log(calculator(3, 4, 10));
 
 const calc2 = (a, b) => {
     console.log("hi");
     return a - b;
 };
+console.log(calc2(2, 4));
 
 //-------------------------------------------- LESSON 17
 //TODO: String Methods 
@@ -189,7 +191,7 @@ console.log(Math.round(num));
 
 const test2 = "12.2px";
 console.log(parseInt(test2)); // 12 - сделал чисто из 12.2px
-console.log(parseFloat(test2));
+console.log(parseFloat(test2)); //12.2
 
 //----------------------------------------
 //TODO: Callback Function 19 lesson
@@ -247,6 +249,144 @@ for (let key in options) {
         console.log(`Свойство ${key} имеет значение ${options[key]}`);
     }
 }
+
+
+//TODO: Lesson 21    ARRAY 
+
+const arr = [1, 2, 5, 9, "da"];
+
+//arr.pop(); //  delete last element 9
+//arr.push(10);  //add last element 10 
+
+//! FOR перебор
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
+
+
+//? Для массива + строка + map , set можно использовать метод for of (only) + element web
+for (let value of arr) {
+    console.log(value);
+}
+
+const arr2 = [3, 5, 7, 12, "yes"];
+
+arr2.forEach(function (item, i, arr2) {
+    console.log(`${i}: ${item} внутри массива ${arr2}`);
+});
+
+//TODO: Разделитель если пользователь прислал тектс - через запятую
+
+//const strSplit = prompt("", "");
+
+//const products = strSplit.split(","); // делим через , и без пробела
+//console.log(products);
+//console.log(products.join(": ")); // Склеиваем массив обратно с : и пробелом  = asd: бывбds: 3: sd
+
+const numArr = [22, 4, 6, 13, 3];
+numArr.sort();
+console.log(numArr); //(5) [13, 22, 3, 4, 6]
+
+
+//! --------------------------------------------------
+function compareNum(a, b) {
+    return a - b;
+}
+//! --------------------------------------------------
+
+// Эллеметны на странице - по факту псевдо массивы
+// Совпадают структуры [ ]  [  ]. только у них нет методов !
+
+//TODO: Lesson 22  Spread .
+
+//соединение 2 obj
+const addObj = {
+    a: 17,
+    e: 20,
+};
+
+const addObj2 = {
+    f: 30,
+    c: 100,
+};
+console.log("assign method");
+console.log(Object.assign(addObj, addObj2));   //Поверхностная копия 
+
+//! Для отдельной копии - 
+
+// const clone = Object.assign({}, add);
+// clone.d = 20;
+// console.log(addObj);  //TODO: -->   {d: 17, e: 20}
+// console.log(clone);   //TODO: -->   {D: 20, e: 20}  изменится
+
+//! Method for create a new array ------------------------- Etention ! ----------------
+
+const oldArray = ["a", "b", "c"];
+const newArray = oldArray.slice();
+
+newArray[1] = "adasdads";
+console.log(newArray);   //(3) ["a", "adasdads", "c"]
+console.log(oldArray);   //(3) ["a", "b", "c"]
+
+//! 4 variant ES6     spread   ( ... ) ! 
+
+const video = ["youtube", "vimeo", "rutube"],
+    blogs = ["wordpress", "livejournal", "blogger"],
+    internet = [...video, ...blogs, "vk", "facebook"];
+
+console.log(internet);  // (8) ["youtube", "vimeo", "rutube", "wordpress", "livejournal", "blogger", "vk", "facebook"]
+
+//---------------
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+const num2 = [2, 5, 7];
+
+log(...num2);
+
+//---------------
+const array2 = ["a", "b", "c"];
+const newArray2 = [...array2];
+console.log(newArray2); //[ 'a', 'b', 'c' ]
+newArray2[2] = 12;
+console.log(array2);    //[ 'a', 'b', 'c' ]
+console.log(newArray2); //[ 'a', 'b', 12 ]
+//---------------
+
+//TODO: new Object clone 
+const objSpreadOperator = {
+    one: 1,
+    two: 2,
+};
+
+const newSpreadOp = { ...objSpreadOperator };
+console.log(newSpreadOp);
+//---------------
+
+//TODO: Lesson 23  OOP
+
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function () {
+        console.log("Hi man Hello");
+    }
+};
+
+
+// const john = {
+//     health: 100,
+
+// };
+
+// Object.setPrototypeOf(john, soldier);
+//! PROTO OBJECT ! Create 
+const john = Object.create(soldier);
+john.sayHello();
+
+//----------------------------------------
 
 
 
